@@ -1,6 +1,7 @@
 <!-- src/lib/components/guide/Guide.svelte -->
 <script lang="ts">
 	import { gameState } from '$lib/state/gameState.svelte';
+	import { base } from '$app/paths';
 
 	function formatMessage(msg: string) {
 		if (!msg) return '';
@@ -42,14 +43,14 @@
 		>
 			<!-- 1. Base Hologram -->
 			<img
-				src="/chu.png"
+				src="{base}/chu.png"
 				alt="CHU Guide"
 				class="hologram-base absolute inset-0 h-full w-full object-contain object-bottom"
 			/>
 			<!-- 2. Scanning Overlay -->
 			<div
 				class="pointer-events-none absolute inset-0 overflow-hidden"
-				style="-webkit-mask-image: url('/chu.png'); -webkit-mask-size: contain; -webkit-mask-position: bottom; -webkit-mask-repeat: no-repeat;"
+				style="-webkit-mask-image: url('{base}/chu.png'); -webkit-mask-size: contain; -webkit-mask-position: bottom; -webkit-mask-repeat: no-repeat;"
 			>
 				<div class="animate-scan-fast absolute top-0 left-0 h-full w-16 bg-linear-to-r from-transparent via-[rgba(255,255,255,0.7)] to-transparent"></div>
 				<div class="animate-scan-slow absolute top-0 left-0 h-full w-32 bg-linear-to-r from-transparent via-[rgba(173,241,138,0.3)] to-transparent opacity-70"></div>
