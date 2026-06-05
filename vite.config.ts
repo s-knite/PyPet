@@ -5,6 +5,9 @@ import { sveltekit } from '@sveltejs/kit/vite';
 
 export default defineConfig({
 	plugins: [tailwindcss(), sveltekit()],
+	worker: {
+		format: 'es'
+	},
 	server: {
 		headers: {
 			'Cross-Origin-Opener-Policy': 'same-origin',
