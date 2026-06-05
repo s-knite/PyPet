@@ -1,0 +1,639 @@
+[
+	{
+		"id": 0,
+		"title": "Level 1: Birth of your PyPet",
+		"concept": "Strings and variables",
+		"stages": [
+			{
+				"id": 0,
+				"title": "Waking Up",
+				"guideMessages": [
+					"Hello! I am CHU (Codified Helper Unit). But you can call me Professor Chu!",
+					"I'm here to help you learn how to care for your new PyPet.",
+					"Let's wake it up. Click on the egg a few times until it hatches."
+				],
+				"requiresAction": true,
+				"requiredPetClicks": 5,
+				"isCodepadEnabled": false,
+				"isReplEnabled": false,
+				"blockFinalMessage": true,
+				"isFreeplayMode": false
+			},
+			{
+				"id": 1,
+				"title": "Say Hello",
+				"guideMessages": [
+					"Yay, your new PyPet is awake!",
+					"Why don't we try to say hello? Type `Hello` into the terminal on the right."
+				],
+				"isCodepadEnabled": false,
+				"requiresAction": false,
+				"blockFinalMessage": true,
+				"isReplEnabled": true,
+				"replCheck": {
+					"type": "exactMatch",
+					"accept": ["Hello", "hello"]
+				}
+			},
+			{
+				"id": 2,
+				"title": "What is Python",
+				"guideMessages": [
+					"Oof, it doesn't look like your PyPet liked that...",
+					"That's because your PyPet only knows the programming language **Python**!",
+					"**Python**, just like any language, has specific words, and rules for how to use those words. You'll need to learn some of those rules to properly care for your PyPet... That's what I'm here for.",
+					"Okay, your first Python word..... *drum roll*.... `print`. Type this into the terminal now."
+				],
+				"isCodepadEnabled": false,
+				"requiresAction": false,
+				"blockFinalMessage": true,
+				"isReplEnabled": true,
+				"replCheck": {
+					"type": "exactMatch",
+					"accept": ["print"]
+				}
+			},
+			{
+				"id": 3,
+				"title": "print()",
+				"guideMessages": [
+					"So, what happened?\nYou should see `<built-in function print>` in the terminal, but what does this mean?",
+					"Well, this tells you that `print` is a **function**, and that it's built into **Python**, that means it's part of the language. But what is a **function**?",
+					"A **function** is a named set of instructions (you'll get to write your own **function** soon.)\nFor now, what you need to know is that to **call** a **function** you must include brackets. Sometimes we'll also put data inside the brackets.",
+					"Try this, type `print(\"Hello\")` into the terminal."
+				],
+				"requiresAction": false,
+				"isCodepadEnabled": false,
+				"isReplEnabled": true,
+				"replCheck": {
+					"type": "matchOutput",
+					"accept": ["Hello"],
+					"ignoreCase": true
+				},
+				"blockFinalMessage": true
+			}
+		]
+	},
+	{
+		"id": 1,
+		"title": "Level 2: Memory",
+		"concept": "Variables",
+		"stages": [
+			{
+				"id": 0,
+				"title": "Variables",
+				"guideMessages": [
+					"Well done! You've learned how to use the print **function**.",
+					"Next up, let's give your PyPet a name! To do that we have to learn about **variables**.",
+					"**Variables** are a way to store **data**, you can think of it like a box, the **variable** name is the label on the box, the data is what you put inside the box.",
+					"Open the Codepad and we'll start making some variables!.."
+				],
+				"isCodepadEnabled": true,
+				"requiresAction": false,
+				"blockFinalMessage": true,
+				"editGuideMessages": [
+					"Welcome to the Codepad! Here we will write code that will stay in your pet's memory.",
+					"We're going to start creating your pet's memory by defining three **variables** (boxes of data):",
+					"**Variable** names have rules too. **Variable** names must start with a letter and can't contain any spaces. We can put data into **variables** using the **assignment operator**, you might know it as equals.",
+					"Copy this code into your codepad\n\n`pet_name = \"Ada\"` \n`pet_type = \"PyPet\"`\n`pet_age = 0`\n\nand then click [Run Tests]"
+				],
+				"isReplEnabled": true,
+				"tests": [
+					{
+						"id": 1,
+						"text": "Define pet_name",
+						"check": "variableValueMatches",
+						"args": {
+							"name": "pet_name",
+							"expectedValue": "Ada"
+						},
+						"hint": "Make sure you typed pet_name = \"Ada\""
+					},
+					{
+						"id": 2,
+						"text": "Define pet_type",
+						"check": "variableValueMatches",
+						"args": {
+							"name": "pet_type",
+							"expectedValue": "PyPet"
+						},
+						"hint": "Make sure you typed pet_type = \"PyPet\""
+					},
+					{
+						"id": 3,
+						"text": "Define pet_age",
+						"check": "variableValueMatches",
+						"args": {
+							"name": "pet_age",
+							"expectedValue": 0
+						},
+						"hint": "Make sure you typed pet_age = 0 without quotes, because it is a number."
+					}
+				]
+			},
+			{
+				"id": 1,
+				"title": "Say my name",
+				"guideMessages": [
+					"Well done. You've named your PyPet Ada!",
+					"Let's test it out. Type `print(pet_name)` in the terminal."
+				],
+				"isCodepadEnabled": false,
+				"requiresAction": true,
+				"blockFinalMessage": true,
+				"isReplEnabled": true,
+				"replCheck": {
+					"type": "matchOutput",
+					"accept": ["Ada"],
+					"ignoreCase": false
+				}
+			},
+			{
+				"id": 2,
+				"title": "Review",
+				"guideMessages": [
+					"Notice how we didn't need to use quotation marks around pet_name because that's a **variable**.",
+					"If you want your PyPet to say \"Hello world\" you need to put that in quotation marks because that's text (what programmers call a **string**), it's different from a **variable**.",
+					"Use the print statement again to get your PyPet to say it's type (remember we saved this as a **variable** - you can still see it in your codepad if you need a reminder)"
+				],
+				"isCodepadEnabled": false,
+				"requiresAction": true,
+				"blockFinalMessage": true,
+				"replCheck": {
+					"type": "matchOutput",
+					"accept": ["PyPet"],
+					"ignoreCase": false
+				},
+				"isReplEnabled": true
+			}
+		]
+	},
+	{
+		"id": 2,
+		"title": "Level 3: The Blueprint",
+		"concept": "Functions without Parameters",
+		"stages": [
+			{
+				"id": 0,
+				"title": "Trying an Undefined Function",
+				"guideMessages": [
+					"Ada's memory only contains what code we give it. Let's add some functions. A **function** is a named sequence of instructions.",
+					"Before we can **call** a function to execute those instructions, we must **define** it first.",
+					"Try calling the `sleep()` function in the terminal to watch it fail, since we haven't built the function yet!"
+				],
+				"requiresAction": true,
+				"isCodepadEnabled": false,
+				"isReplEnabled": true,
+				"replCheck": {
+					"type": "exactMatch",
+					"accept": ["sleep()"]
+				},
+				"blockFinalMessage": true
+			},
+			{
+				"id": 1,
+				"title": "Defining Functions",
+				"guideMessages": [
+					"It failed because the function definition doesn't exist yet.",
+					"Open your Codepad so we can write the code to define it!"
+				],
+				"editGuideMessages": [
+					"We use the `def` keyword in Python to define a new function.",
+					"Let's define two new functions exactly like this:",
+					"```def sleep():\n  print(\"Zzz\")```",
+					"```def wake():\n  print(\"Yawn\")```"
+				],
+				"requiresAction": true,
+				"isCodepadEnabled": true,
+				"isReplEnabled": true,
+				"tests": [
+					{
+						"id": 1,
+						"text": "Define sleep() function",
+						"check": "functionExists",
+						"args": {
+							"name": "sleep"
+						},
+						"hint": "Start with: def sleep():"
+					},
+					{
+						"id": 2,
+						"text": "Check sleep() output matches \"Zzz\"",
+						"check": "functionOutputMatches",
+						"args": {
+							"name": "sleep",
+							"expectedOutput": "Zzz"
+						},
+						"hint": "Inside sleep(), print(\"Zzz\")",
+						"unlocksMood": "sleeping"
+					},
+					{
+						"id": 3,
+						"text": "Define wake() function that prints \"Yawn\"",
+						"check": "functionOutputMatches",
+						"args": {
+							"name": "wake",
+							"expectedOutput": "Yawn"
+						},
+						"hint": "Inside wake(), print(\"Yawn\")",
+						"unlocksMood": "idle"
+					}
+				],
+				"blockFinalMessage": true
+			},
+			{
+				"id": 2,
+				"title": "Testing the Functions",
+				"guideMessages": [
+					"You've successfully added two new functions to Ada's memory!",
+					"Type `sleep()` in the terminal to call the function and trigger her sleeping 3D mood."
+				],
+				"requiresAction": true,
+				"isCodepadEnabled": false,
+				"isReplEnabled": true,
+				"replCheck": {
+					"type": "exactMatch",
+					"accept": ["sleep()"]
+				},
+				"blockFinalMessage": true,
+				"isFreeplayMode": false
+			},
+			{
+				"id": 3,
+				"title": "And up again",
+				"guideMessages": ["Great!", "Now wake up your PyPet again!"],
+				"isCodepadEnabled": false,
+				"requiresAction": false,
+				"blockFinalMessage": true,
+				"isReplEnabled": true,
+				"isFreeplayMode": false,
+				"replCheck": {
+					"type": "matchOutput",
+					"accept": ["Yawn"],
+					"ignoreCase": false
+				}
+			},
+			{
+				"id": 4,
+				"title": "Freeplay",
+				"guideMessages": [
+					"You can now use sleep and wake any time you need, try it now and when you're ready move onto the next level."
+				],
+				"isCodepadEnabled": false,
+				"requiresAction": false,
+				"blockFinalMessage": false,
+				"isReplEnabled": true,
+				"isFreeplayMode": true
+			}
+		]
+	},
+	{
+		"id": 3,
+		"title": "Level 4: Blank Spaces",
+		"concept": "Functions with Parameters",
+		"stages": [
+			{
+				"id": 0,
+				"title": "Concatenation",
+				"guideMessages": [
+					"Functions become much more powerful when we pass specific data into them.",
+					"Before we upgrade our functions, let's learn how to add strings together using the `+` operator. Programmers call this **concatenation**.",
+					"Type `print(\"Good\" + \"morning\")` in the terminal."
+				],
+				"requiresAction": true,
+				"isCodepadEnabled": false,
+				"isReplEnabled": true,
+				"replCheck": {
+					"type": "exactMatch",
+					"accept": [
+						"print(\"Good\"+\"morning\")",
+						"print(\"Good\" + \"morning\")",
+						"print('Good'+'morning')",
+						"print('Good' + 'morning')"
+					]
+				},
+				"blockFinalMessage": true
+			},
+			{
+				"id": 1,
+				"title": "Adding Parameters",
+				"guideMessages": [
+					"Now let's pass a variable into a function. We call variables passed into functions **parameters**.",
+					"Open your Codepad."
+				],
+				"editGuideMessages": [
+					"Write a new function: `def greet(name):` that prints `\"Hello \" + name`.",
+					"Notice how `name` acts as a variable inside the function!",
+					"Now redefine your sleep function using a parameter: `def sleep(name):` that prints `\"Goodnight \" + name + \" Zzz\"`."
+				],
+				"requiresAction": true,
+				"isCodepadEnabled": true,
+				"isReplEnabled": true,
+				"tests": [
+					{
+						"id": 1,
+						"text": "greet(name) accepts 1 parameter",
+						"check": "functionParamsCount",
+						"args": {
+							"name": "greet",
+							"expectedCount": 1
+						},
+						"hint": "Check your definition matches def greet(name):"
+					},
+					{
+						"id": 2,
+						"text": "greet outputs correctly",
+						"check": "functionOutputMatches",
+						"args": {
+							"name": "greet",
+							"testArgs": ["Sarah"],
+							"expectedOutput": "Hello Sarah"
+						},
+						"hint": "Make sure you print(\"Hello \" + name)"
+					},
+					{
+						"id": 3,
+						"text": "sleep(name) accepts 1 parameter",
+						"check": "functionParamsCount",
+						"args": {
+							"name": "sleep",
+							"expectedCount": 1
+						},
+						"hint": "You must rewrite sleep as def sleep(name):"
+					},
+					{
+						"id": 4,
+						"text": "sleep outputs correctly",
+						"check": "functionOutputMatches",
+						"args": {
+							"name": "sleep",
+							"testArgs": ["Sarah"],
+							"expectedOutput": "Goodnight Sarah Zzz"
+						},
+						"hint": "Make sure you print(\"Goodnight \" + name + \" Zzz\")",
+						"unlocksMood": "sleeping"
+					}
+				],
+				"blockFinalMessage": true
+			}
+		]
+	},
+	{
+		"id": 4,
+		"title": "Level 5: Listening",
+		"concept": "Input & Storing Data",
+		"stages": [
+			{
+				"id": 0,
+				"title": "The input() Function",
+				"guideMessages": [
+					"Ada can output text using `print()`, but she also needs to receive **input** from humans. We use the `input()` function for this.",
+					"Type `input(\"What is your favorite color? \")` into the REPL, and answer it."
+				],
+				"requiresAction": true,
+				"isCodepadEnabled": false,
+				"isReplEnabled": true,
+				"replCheck": {
+					"type": "exactMatch",
+					"accept": ["input(\"What is your color? \")", "input('What is your color? ')"]
+				},
+				"blockFinalMessage": true
+			},
+			{
+				"id": 1,
+				"title": "Assigning Input to Variables",
+				"guideMessages": [
+					"Your input wasn't saved! Why? Because you didn't assign the text string returned by the `input()` function to a **variable**!",
+					"Open your Codepad so we can fix this."
+				],
+				"editGuideMessages": [
+					"Write a function `def ask_feeling():`",
+					"Inside, create a variable and assign it the input: `feeling = input(\"How are you? \")`",
+					"Then print the variable: `print(\"Ada heard you feel \" + feeling)`"
+				],
+				"requiresAction": true,
+				"isCodepadEnabled": true,
+				"isReplEnabled": true,
+				"tests": [
+					{
+						"id": 1,
+						"text": "ask_feeling() exists",
+						"check": "functionExists",
+						"args": {
+							"name": "ask_feeling"
+						},
+						"hint": "Start with: def ask_feeling():"
+					},
+					{
+						"id": 2,
+						"text": "ask_feeling() outputs correctly",
+						"check": "functionOutputMatches",
+						"args": {
+							"name": "ask_feeling",
+							"mockInputs": ["happy"],
+							"expectedOutput": "Ada heard you feel happy"
+						},
+						"hint": "Make sure you prompt exactly 'How are you? ' and print 'Ada heard you feel ' followed by the feeling."
+					}
+				],
+				"blockFinalMessage": true
+			}
+		]
+	},
+	{
+		"id": 5,
+		"title": "Level 6: Making Choices",
+		"concept": "Selection / If Statements",
+		"stages": [
+			{
+				"id": 0,
+				"title": "Booleans",
+				"guideMessages": [
+					"Ada needs to be able to evaluate situations to make decisions in code.",
+					"Decisions in programming are evaluated using **Booleans**, which are values that are strictly either `True` or `False`.",
+					"Type `5 == 5` in the REPL to see a Boolean evaluation."
+				],
+				"requiresAction": true,
+				"isCodepadEnabled": false,
+				"isReplEnabled": true,
+				"replCheck": {
+					"type": "exactMatch",
+					"accept": ["5 == 5", "5==5"]
+				},
+				"blockFinalMessage": true
+			},
+			{
+				"id": 1,
+				"title": "Conditional Logic",
+				"guideMessages": [
+					"Python uses `if`, `elif`, and `else` statements to execute different logic depending on whether a Boolean condition is True or False.",
+					"Open your Codepad."
+				],
+				"editGuideMessages": [
+					"Write `def react_to_food(food):`",
+					"Inside, check the value of the `food` variable:",
+					"if food == \"bug\":\n  print(\"Yuck!\")",
+					"elif food == \"apple\":\n  print(\"Yum!\")",
+					"elif food == \"battery\":\n  print(\"Zap!\")",
+					"else:\n  print(\"Sniff...\")"
+				],
+				"requiresAction": true,
+				"isCodepadEnabled": true,
+				"isReplEnabled": true,
+				"tests": [
+					{
+						"id": 1,
+						"text": "react_to_food(food) exists",
+						"check": "functionParamsCount",
+						"args": {
+							"name": "react_to_food",
+							"expectedCount": 1
+						},
+						"hint": "def react_to_food(food):"
+					},
+					{
+						"id": 2,
+						"text": "bug triggers Yuck!",
+						"check": "functionOutputMatches",
+						"args": {
+							"name": "react_to_food",
+							"testArgs": ["bug"],
+							"expectedOutput": "Yuck!"
+						},
+						"hint": "Use if food == 'bug':",
+						"unlocksMood": "error"
+					},
+					{
+						"id": 3,
+						"text": "apple triggers Yum!",
+						"check": "functionOutputMatches",
+						"args": {
+							"name": "react_to_food",
+							"testArgs": ["apple"],
+							"expectedOutput": "Yum!"
+						},
+						"hint": "Use elif food == 'apple':",
+						"unlocksMood": "happy"
+					},
+					{
+						"id": 4,
+						"text": "battery triggers Zap!",
+						"check": "functionOutputMatches",
+						"args": {
+							"name": "react_to_food",
+							"testArgs": ["battery"],
+							"expectedOutput": "Zap!"
+						},
+						"hint": "Use elif food == 'battery':",
+						"unlocksMood": "recharging"
+					},
+					{
+						"id": 5,
+						"text": "other food triggers Sniff...",
+						"check": "functionOutputMatches",
+						"args": {
+							"name": "react_to_food",
+							"testArgs": ["rock"],
+							"expectedOutput": "Sniff..."
+						},
+						"hint": "Use an else: statement."
+					}
+				],
+				"blockFinalMessage": true
+			}
+		]
+	},
+	{
+		"id": 6,
+		"title": "Level 7: The Game",
+		"concept": "Logic, Randomness & State",
+		"stages": [
+			{
+				"id": 0,
+				"title": "Casting Strings to Integers",
+				"guideMessages": [
+					"Before we build our guessing game, remember that the `input()` function ALWAYS returns text (a string).",
+					"If we want to compare the input to a number in math, we have to 'cast' it into an integer datatype using the `int()` function.",
+					"Try typing `int(\"5\") + 5` into the REPL."
+				],
+				"requiresAction": true,
+				"isCodepadEnabled": false,
+				"isReplEnabled": true,
+				"replCheck": {
+					"type": "exactMatch",
+					"accept": ["int(\"5\") + 5", "int('5') + 5", "int(\"5\")+5"]
+				},
+				"blockFinalMessage": true
+			},
+			{
+				"id": 1,
+				"title": "Number Guesser",
+				"guideMessages": [
+					"Let's combine Variables, Parameters, Input, and Selection into a full application!",
+					"Open your Codepad."
+				],
+				"editGuideMessages": [
+					"Importing modules gives Python extra tools. Start line 1 with `import random`.",
+					"Write `def play_guess():`",
+					"Inside, define: `secret = random.randint(1, 10)`",
+					"Then ask for a guess: `guess = int(input(\"Guess 1 to 10: \"))`",
+					"Finally, add if statements checking if `guess == secret`, `< secret` or `> secret`, printing \"You win!\", \"Too low!\", or \"Too high!\""
+				],
+				"requiresAction": true,
+				"isCodepadEnabled": true,
+				"isReplEnabled": true,
+				"tests": [
+					{
+						"id": 1,
+						"text": "play_guess() exists",
+						"check": "functionExists",
+						"args": {
+							"name": "play_guess"
+						},
+						"hint": "def play_guess():"
+					},
+					{
+						"id": 2,
+						"text": "Wins correctly",
+						"check": "functionOutputMatches",
+						"args": {
+							"name": "play_guess",
+							"mockInputs": ["5"],
+							"mockRandoms": [5],
+							"expectedOutput": "You win!"
+						},
+						"hint": "if guess == secret: print(\"You win!\")",
+						"unlocksMood": "level_up"
+					},
+					{
+						"id": 3,
+						"text": "Handles Too low!",
+						"check": "functionOutputMatches",
+						"args": {
+							"name": "play_guess",
+							"mockInputs": ["3"],
+							"mockRandoms": [8],
+							"expectedOutput": "Too low!"
+						},
+						"hint": "elif guess < secret: print(\"Too low!\")",
+						"unlocksMood": "sad"
+					},
+					{
+						"id": 4,
+						"text": "Handles Too high!",
+						"check": "functionOutputMatches",
+						"args": {
+							"name": "play_guess",
+							"mockInputs": ["9"],
+							"mockRandoms": [2],
+							"expectedOutput": "Too high!"
+						},
+						"hint": "else: print(\"Too high!\")",
+						"unlocksMood": "sad"
+					}
+				],
+				"blockFinalMessage": true
+			}
+		]
+	}
+]
